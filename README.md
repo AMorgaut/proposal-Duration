@@ -55,15 +55,26 @@ Of course would be awesome if it could support '+' & '-' operators, but would ne
 - Go: https://golang.org/pkg/time/#Duration
 - Moment.js: https://momentjs.com/docs/#/durations/
 
+similar
+
+- PHP: http://php.net/manual/fr/class.dateinterval.php
+
 ## Duration API Draft
 
 ### Constructor
 
 #### new Duration(durationIsoString)
 
+Construct a Duration object from an ISO 8601 Duration string. Behave the same as `Duration.parse(durationIsoString)`
+
 #### new Duration(number, unit)
 
+Construct a Duration object from a number value and the associated unit represented by a string enum ('year', 'month', ...)
+
 #### new Duration(options)
+
+Construct a Duration object from an object holding the values parts)
+ex: `new Duration({ week: 12 })`
 
 ### Properties
 
@@ -71,7 +82,9 @@ Of course would be awesome if it could support '+' & '-' operators, but would ne
 
 ### Methods
 
-#### Duration.parse(isoDuration)
+#### Duration.parse(durationIsoString)
+
+Construct a Duration object from an ISO 8601 Duration string.
 
 #### Duration.between(date1, date2)
 
