@@ -19,7 +19,8 @@ Introduce a `Duration` native object:
 - supporting the `ISO 8601` duration standard
 - that Web engines & ssjs engines could support within Timer APIs
 
-This ISO 8601 standard is already used for durations by the YouTube video API
+For usage examples, the ISO 8601 standard is used for durations by the YouTube video API:
+https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
 
 ## Example
 
