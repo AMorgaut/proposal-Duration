@@ -23,7 +23,7 @@ This ISO 8601 standard is already used for durations by the YouTube video API
 
 ## Example
 
-```
+```javascript
 const duration = new Duration('P1D2H'); // 1 day & 2 hours in ISO 8601
 duration.add('P20H'); // ISO string operation
 duration.addHours(2); // number operation
