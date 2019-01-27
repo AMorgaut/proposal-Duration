@@ -29,7 +29,7 @@ https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
 ```javascript
 const duration = new Duration('P1D2H'); // 1 day & 2 hours in ISO 8601
 
-console.log( duration.equals(new Duration({ days: 1, hours: 2} )) ); // true
+console.log( duration.equals(new Duration({ days: 1, hours: 2 })) ); // true
 
 duration.add('P20H'); // ISO string operation
 duration.addHours(2); // number operation
