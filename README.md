@@ -28,11 +28,15 @@ https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
 
 ```javascript
 const duration = new Duration('P1D2H'); // 1 day & 2 hours in ISO 8601
+
 duration.add('P20H'); // ISO string operation
 duration.addHours(2); // number operation
 console.log(duration.toLocaleString()); // 2 days
 console.log(duration.toISOString()); // P2D
 console.log(Number(duration)) // 172800000
+
+console.log( duration.equals(new Duration({ days: 1, hours: 2} )) ); // true
+
 
 const delay = new Duration('PT1M'); // 1 minute
 setTimeout(callback, delay);
