@@ -1,7 +1,9 @@
 # ECMAScript `Duration` feature proposal
 
 **Stage**: 0
+
 **Author**: Alexandre Morgaut
+
 **Champion**: To be found
 
 ## Problems
