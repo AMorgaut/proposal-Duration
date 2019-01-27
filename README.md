@@ -30,7 +30,7 @@ https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
 const duration = new Duration('P1D2H'); // 1 day & 2 hours in ISO 8601
 duration.add('P20H'); // ISO string operation
 duration.addHours(2); // number operation
-console.log(duration); // 2 days
+console.log(duration.toLocaleString()); // 2 days
 console.log(duration.toISOString()); // P2D
 console.log(Number(duration)) // 172800000
 
