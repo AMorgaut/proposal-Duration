@@ -54,3 +54,49 @@ Of course would be awesome if it could support '+' & '-' operators, but would ne
 - Ruby: https://api.rubyonrails.org/classes/ActiveSupport/Duration.html
 - Go: https://golang.org/pkg/time/#Duration
 - Moment.js: https://momentjs.com/docs/#/durations/
+
+## Duration API Draft
+
+### Constructor
+
+#### new Duration(durationIsoString)
+
+#### new Duration(number, unit)
+
+#### new Duration(options)
+
+### Properties
+
+#### Duration.prototype
+
+### Methods
+
+#### Duration.parse(isoDuration)
+
+#### Duration.between(date1, date2)
+
+### Prototype methods
+
+#### Duration.prototype.equals(duration)
+
+#### Duration.prototype.as{time unit}()
+
+Returns a number representing the **full** duration **in the desired unit**
+ex: `const days = duration.asDays();`
+
+#### Duration.prototype.get{time unit}()
+
+Returns a number representing **the part** of the duration corresponding of the **desired unit**
+ex: `const days = duration.getDays();`
+
+#### Duration.prototype.set{time unit}(value)
+
+Update **the part** of the duration corresponding of the **desired unit** with the specified value number
+ex: `duration.setDays(5);`
+
+#### Duration.prototype.add{time unit}(value)
+
+Add the specified duration to the instance value
+ex: `duration.addDays(5);`
+
+#### Duration.prototype.subtract{time unit}(value)
