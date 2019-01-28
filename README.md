@@ -15,7 +15,7 @@
 
 ## Proposal
 
-Introduce a `Duration` native object:
+Introduce a `Duration` native object & related additional `Date` methods:
 - Providing a useful API to read / edit a duration using different units
 - Allowing **engine optimizations** for duration & date operations
 - supporting the `ISO 8601` duration standard
