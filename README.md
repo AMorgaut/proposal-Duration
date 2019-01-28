@@ -35,7 +35,7 @@ duration.add('P20H'); // ISO string operation
 duration.addHours(2); // number operation
 console.log(duration.toLocaleString()); // 2 days
 console.log(duration.toISOString()); // P2D
-console.log(Number(duration)) // 172800000
+console.log(Number(duration)) // 172800000 (in milli-seconds for compatibility with ES Dates)
 
 
 
