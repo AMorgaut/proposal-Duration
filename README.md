@@ -69,7 +69,7 @@ Similar concepts
 
 - PHP: http://php.net/manual/fr/class.dateinterval.php
 - Swift/Objective C (Foundation Framework): https://developer.apple.com/documentation/foundation/timeinterval
-- .NET Visual Basic/C#: https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.dateinterval?view=netframework-4.7.2
+- .NET Visual Basic/C#: https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.dateinterval
 
 ## Duration Object (Draft)
 
