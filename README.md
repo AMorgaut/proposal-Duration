@@ -155,3 +155,7 @@ ex: `duration.valueOf(); // 172800000`
 ## Date API extension Draft
 
 TODO
+
+## Intl.DurationFormat API overview
+
+TODO
