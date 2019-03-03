@@ -31,7 +31,7 @@ Introduce a new `Duration` native object & related additional `Date.prototype` m
 For usage examples, the ISO 8601 standard is used for durations by the YouTube video API:
 https://developers.google.com/youtube/v3/docs/videos#contentDetails.duration
 
-## Example
+## Examples
 
 ```javascript
 const duration = new Duration('P1D2H'); // 1 day & 2 hours in ISO 8601
@@ -108,6 +108,7 @@ For easier integration with JS Date timestamps, the default unit would be 'ms'
 This description applies only if the Duration constructor is called with an object as first argument.
 
 Construct a Duration object from an object holding the values parts)
+
 ex: `new Duration({ week: 12 })`
 
 ### Properties of the Duration Constructor
@@ -199,9 +200,25 @@ ex: `duration.valueOf(); // 172800000`
 > To clarify: 
 > It can be complex to choose how to represent, as a number, a 3 month duration as months can have 28, 29, 30, or 31 days; and same complexity comes for years or even days.
 
-## Date API extension Draft
+## Additional properties to the Date Prototype Object (Draft)
 
-TODO
+#### Date.prototype.add(duration)
+
+Update the date by adding the specified duration to the instance value
+
+ex:
+```
+const date = new Date('2019-01-25T12:25:00.000Z');
+const delay = new Duration('P2M');
+date.add(delay);
+console.log(date.toLocaleString); // "3/25/2019, 1:25:00 PM"
+```
+
+#### Date.prototype.subtract(duration)
+
+Update the date by removing the specified duration to the instance value
+`
+
 
 ## Intl.DurationFormat API overview
 
