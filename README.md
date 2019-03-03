@@ -222,4 +222,6 @@ Update the date by removing the specified duration to the instance value
 
 ## Intl.DurationFormat API overview
 
-TODO
+TODO in a dedicated document
+
+based on [ECMA 402 DateTimeFormat Objects](https://www.ecma-international.org/ecma-402/4.0/#datetimeformat-objects)
