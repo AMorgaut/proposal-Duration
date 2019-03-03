@@ -1,6 +1,6 @@
 # ECMAScript `Duration` Object proposal
 
-**Stage**: 0
+**Stage**: 0?
 
 **Author**: Alexandre Morgaut
 
