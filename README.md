@@ -58,15 +58,18 @@ Of course would be awesome if it could support '+' & '-' operators, but would ne
 - Java: https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html
 - Rust: https://doc.rust-lang.org/std/time/struct.Duration.html
 - Dart: https://api.dartlang.org/stable/2.1.0/dart-core/Duration-class.html
-- PHP: http://php.net/manual/en/class.dateinterval.php
 - Scala: https://www.scala-lang.org/api/2.12.3/scala/concurrent/duration/Duration.html
 - Ruby on Rails: https://api.rubyonrails.org/classes/ActiveSupport/Duration.html
 - Go: https://golang.org/pkg/time/#Duration
+- C++: http://www.cplusplus.com/reference/chrono/duration/duration/
+- .NET C#: https://docs.microsoft.com/en-us/dotnet/api/system.timespan.duration
 - Moment.js: https://momentjs.com/docs/#/durations/
 
-similar
+Similar concepts
 
 - PHP: http://php.net/manual/fr/class.dateinterval.php
+- Swift/Objective C (Foundation Framework): https://developer.apple.com/documentation/foundation/timeinterval
+- .NET Visual Basic/C#: https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.dateinterval?view=netframework-4.7.2
 
 ## Duration Object (Draft)
 
