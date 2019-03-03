@@ -151,7 +151,7 @@ Returns an "date indempentant"* timestamp representation of the duration value
 ex: `duration.valueOf(); // 172800000`
 
 > To clarify: 
-> It can be complex to choose how to represent a 3 month duration as months can have 28, 29, 30, or 31 days and soma complexity comes for years or even days.
+> It can be complex to choose how to represent a 3 month duration as months can have 28, 29, 30, or 31 days and same complexity comes for years or even days.
 
 ## Date API extension Draft
 
