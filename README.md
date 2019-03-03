@@ -128,7 +128,7 @@ ex: `duration.addDays(5);`
 #### Duration.prototype.subtract{time unit}(value)
 
 Removes the specified duration to the instance value
-ex: `duration.addDays(5);`
+ex: `duration.subtractDays(5);`
 
 #### Duration.prototype.toLocaleString()
 
