@@ -1,4 +1,4 @@
-# ECMAScript `Duration` feature proposal
+# ECMAScript `Duration` Object proposal
 
 **Stage**: 0
 
