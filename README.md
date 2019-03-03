@@ -68,17 +68,36 @@ similar
 
 - PHP: http://php.net/manual/fr/class.dateinterval.php
 
-## Duration API Draft
+## Duration Object (Draft)
 
 Would take place in the [`Numbers & Dates` ES specification section](https://www.ecma-international.org/ecma-262/9.0/index.html#sec-numbers-and-dates)
 
+`Date` *abstract operations* like [DaysInYear(y)](https://www.ecma-international.org/ecma-262/9.0/index.html#eqn-DaysInYear) or [HourFromTime(t)](https://www.ecma-international.org/ecma-262/9.0/index.html#eqn-HourFromTime) should be reused for Duration objects.
+
 ### Constructor
 
-#### new Duration(durationIsoString)
+The Duration constructor:
 
-Construct a Duration object from an ISO 8601 Duration string. Behave the same as `Duration.parse(durationIsoString)`
+- is the intrinsic object *%Duration%*.
+- is the initial value of the **Duration** property of the global object.
+- creates and initializes a new Duration object when called as a constructor.
+- returns the zero number value representing the zero duration when called as a function rather than as a constructor.
+- is a single function whose behaviour is overloaded based upon the number and types of its arguments.
+- is designed to be subclassable. It may be used as the value of an **extends** clause of a class definition. Subclass constructors that intend to inherit the specified **Duration** behaviour must include a **super** call to the **Duration** constructor to create and initialize the subclass instance with a [[DateValue]] internal slot.
+- has a **length** property whose value is 2.
+
+#### new Duration(string)
+
+This description applies only if the Duration constructor is called with a string as first argument.
+
+First try to construct a Duration object from an ISO 8601 Duration string.
+If the string is not a valid duration ISO string, try to interpret it as a locale duration string.
+
+Behave the same as `Duration.parse(string)`
 
 #### new Duration(number[, unit])
+
+This description applies only if the Duration constructor is called with a number as first argument.
 
 Construct a Duration object from a number value and the associated unit represented by a string enum ('year', 'month', ...)
 The `unit`string enum could support shorthand aliases (ex: 'ms' for 'millisecond")
@@ -86,72 +105,99 @@ For easier integration with JS Date timestamps, the default unit would be 'ms'
 
 #### new Duration(options)
 
+This description applies only if the Duration constructor is called with an object as first argument.
+
 Construct a Duration object from an object holding the values parts)
 ex: `new Duration({ week: 12 })`
 
-### Properties
-
-#### Duration.prototype
-
-### Methods
-
-#### Duration.parse(durationIsoString)
-
-Construct a Duration object from an ISO 8601 Duration string.
+### Properties of the Duration Constructor
 
 #### Duration.between(date1, date2)
 
-### Prototype methods
+Construct a Duration object from the difference between 2 dates.
 
-#### Duration.prototype.equals(duration)
+#### Duration.parse(string)
+
+First try to construct a Duration object from an ISO 8601 Duration string.
+If the string is not a valid duration ISO string, try to interpret it as a locale duration string.
+
+#### Duration.prototype
+
+The initial value of `Duration.prototype` is the intrinsic object `%DurationPrototype%`.
+
+This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false }.
+
+### Properties of the Duration Prototype Object
+
+The Duration prototype object:
+
+- is the intrinsic object *%DatePrototype%*.
+- is itself an ordinary object.
+- is not a Duration instance and does not have a `[[DurationValue]]` internal slot.
+- has a `[[Prototype]]` internal slot whose value is the intrinsic object *%ObjectPrototype%*.
+
+#### Duration.prototype.add{time unit}(value)
+
+Add the specified duration to the instance value
+
+ex: `duration.addDays(5);`
 
 #### Duration.prototype.as{time unit}()
 
 Returns a number representing the **full** duration **in the desired unit**
+
 ex: `const days = duration.asDays();`
+
+#### Duration.prototype.equals(duration)
+
+Returns true if the current instance and the given attribute represent the same duration
+
+ex: `duration.equals(duration2); // true or false`
 
 #### Duration.prototype.get{time unit}()
 
 Returns a number representing **the part** of the duration corresponding of the **desired unit**
+
 ex: `const days = duration.getDays();`
 
 #### Duration.prototype.set{time unit}(value)
 
 Update **the part** of the duration corresponding of the **desired unit** with the specified value number
+
 ex: `duration.setDays(5);`
-
-#### Duration.prototype.add{time unit}(value)
-
-Add the specified duration to the instance value
-ex: `duration.addDays(5);`
 
 #### Duration.prototype.subtract{time unit}(value)
 
 Removes the specified duration to the instance value
+
 ex: `duration.subtractDays(5);`
 
 #### Duration.prototype.toLocaleString()
 
 Returns a locale string representation of the duration value
+
 ex: `duration.toLocaleString(); // "2 days"`
 
 #### Duration.prototype.toISOString()
 
 Returns an ISO 8601 string representation of the duration value
+
 ex: `duration.toISOString(); // "P2D"`
 
 #### Duration.prototype.toString()
 
 To be defined
+
 Might be implementation-dependent like of the toString family Date methods
 
 #### Duration.prototype.valueOf()
 
 Returns an "date indempentant"* timestamp representation of the duration value
+
 ex: `duration.valueOf(); // 172800000`
 
 > To clarify: 
-> It can be complex to choose how to represent a 3 month duration as months can have 28, 29, 30, or 31 days and same complexity comes for years or even days.
+> It can be complex to choose how to represent, as a number, a 3 month duration as months can have 28, 29, 30, or 31 days; and same complexity comes for years or even days.
 
 ## Date API extension Draft
 
